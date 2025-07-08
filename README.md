@@ -4,23 +4,41 @@
 
 ### 1. Backend (API Server)
 
-- Open a terminal in the `backend` folder:
-  ```bash
-  cd backend
-  npm install
-  npm start
-  ```
-- The backend server will run on [http://localhost:5000](http://localhost:5000)
+- **Local:**
+
+  - Open a terminal in the `backend` folder:
+    ```bash
+    cd backend
+    npm install
+    npm start
+    ```
+  - The backend server will run on [http://localhost:5000](http://localhost:5000)
+
+- **Cloud (Render.com):**
+  - Push your backend code to GitHub.
+  - Go to [https://render.com/](https://render.com/) and create a new Web Service.
+  - Set the root directory to `backend` and use `npm install` as the build command, `npm start` as the start command.
+  - Set your Reddit API credentials as environment variables in the Render dashboard.
+  - After deploy, use your Render backend URL (e.g., `https://your-backend.onrender.com`).
 
 ### 2. Frontend (React UI)
 
-- Open a new terminal in the `ui` folder:
-  ```bash
-  cd ui
-  npm install
-  npm start
-  ```
-- The frontend will run on [http://localhost:3000](http://localhost:3000) and proxy API requests to the backend.
+- **Local:**
+
+  - Open a new terminal in the `ui` folder:
+    ```bash
+    cd ui
+    npm install
+    npm start
+    ```
+  - The frontend will run on [http://localhost:3000](http://localhost:3000) and proxy API requests to the backend.
+
+- **Cloud (Vercel):**
+  - Push your `ui/` code to GitHub.
+  - Go to [https://vercel.com/](https://vercel.com/) and import your repo as a new project.
+  - Set the root directory to `ui`.
+  - In Vercel dashboard, set the environment variable `REACT_APP_API_URL` to your Render backend URL (e.g., `https://your-backend.onrender.com`).
+  - Deploy and use your Vercel frontend URL.
 
 ---
 
@@ -30,13 +48,16 @@
 
 - By default, the backend tracks "Hollow Knight" (AppID: 367520).
 - You can change the default game by editing `backend/src/config.js`:
+
   ```js
   module.exports = {
     APP_ID: "367520", // Change to your desired Steam AppID
     GAME_NAME: "Hollow Knight", // Change to your desired game name
+
     // ...other config
   };
   ```
+
 - Or, you can pass parameters when starting the backend:
   ```bash
   node src/server.js <AppID> <GameName>
@@ -82,5 +103,5 @@
 
 ---
 
-For more details, see comments in the code or reach out to me via email or telegram
+For more details, see comments in the code or reach out to me via email or telegram.
 saintfikru@gmail.com

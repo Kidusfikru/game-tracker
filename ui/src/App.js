@@ -16,6 +16,7 @@ function App() {
   const fetchData = (name = gameName) => {
     setLoading(true);
     setError(null);
+    //uncomment for local testing
     // fetch(
     //   `http://localhost:5000/api/game-data?gameName=${encodeURIComponent(name)}`
     // )
