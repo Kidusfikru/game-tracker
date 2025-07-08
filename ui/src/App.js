@@ -16,8 +16,13 @@ function App() {
   const fetchData = (name = gameName) => {
     setLoading(true);
     setError(null);
+    // fetch(
+    //   `http://localhost:5000/api/game-data?gameName=${encodeURIComponent(name)}`
+    // )
     fetch(
-      `http://localhost:5000/api/game-data?gameName=${encodeURIComponent(name)}`
+      `${
+        process.env.REACT_APP_API_URL || "https://your-backend.onrender.com"
+      }/api/game-data?gameName=${encodeURIComponent(name)}`
     )
       .then((res) => {
         if (!res.ok) throw new Error("Failed to fetch data");
