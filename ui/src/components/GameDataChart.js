@@ -1,6 +1,7 @@
 import React from "react";
 import { Typography } from "@mui/material";
 import { Line } from "react-chartjs-2";
+
 import {
   Chart as ChartJS,
   CategoryScale,
@@ -10,6 +11,7 @@ import {
   Title,
   Tooltip,
   Legend,
+  ScatterController,
 } from "chart.js";
 
 ChartJS.register(
@@ -19,7 +21,8 @@ ChartJS.register(
   LineElement,
   Title,
   Tooltip,
-  Legend
+  Legend,
+  ScatterController
 );
 
 function GameDataChart({ data, gameName }) {
