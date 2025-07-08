@@ -21,7 +21,8 @@ function App() {
     // )
     fetch(
       `${
-        process.env.REACT_APP_API_URL || "https://your-backend.onrender.com"
+        process.env.REACT_APP_API_URL ||
+        "https://game-tracker-s83b.onrender.com"
       }/api/game-data?gameName=${encodeURIComponent(name)}`
     )
       .then((res) => {
