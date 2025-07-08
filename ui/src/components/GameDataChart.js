@@ -1,5 +1,5 @@
 import React from "react";
-import { Typography, Box } from "@mui/material";
+import { Typography, Box, useTheme, useMediaQuery } from "@mui/material";
 import { Line } from "react-chartjs-2";
 
 import {
@@ -26,8 +26,8 @@ ChartJS.register(
 );
 
 function GameDataChart({ data, gameName }) {
-  // Detect screen size for responsive chart options
-  const isMobile = window.innerWidth < 768; // MUI md breakpoint
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down('md')); // Use MUI breakpoint
   
   const chartData = {
     labels: data.map((row) => row.date),
